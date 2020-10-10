@@ -1,11 +1,15 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	router := gin.Default()
+	router.LoadHTMLGlob("templates/*")
+
 	router.GET("/", HelloIndex)
 	router.GET("/ping", HelloWeb)
 	router.Run()
@@ -19,7 +23,5 @@ func HelloWeb(c *gin.Context) {
 }
 
 func HelloIndex(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"message": "Index hello",
-	})
+	c.HTML(http.StatusOK, "index.html", nil)
 }
