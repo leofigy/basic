@@ -22,9 +22,9 @@ func HelloWeb(c *gin.Context) {
 
 	if c.Request.Method == "POST" {
 
-		if value, ok := c.GetPostForm("name"); ok {
-			log.Println("FOUNDDDDDDD IT", value)
-		}
+		value := c.DefaultPostForm("username", "none")
+
+		log.Println(value)
 
 		c.HTML(http.StatusOK, "internal.html", nil)
 		return
