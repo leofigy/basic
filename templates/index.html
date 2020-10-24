@@ -19,12 +19,6 @@
             <div class="content">
 
               <form method="POST" action="/ping">
-              <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Text input" id="name">
-                </div>
-              </div>
               
               <div class="field">
                 <label class="label">Username</label>
@@ -38,14 +32,15 @@
                   </span>
                 </div>
                 <p class="help is-success">This username is available</p>
-              </div>              
-              
+              </div>      
               <div class="field">
-                <label class="label">Message</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Textarea"></textarea>
-                </div>
-              </div>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>        
               <div class="field is-grouped">
                 <div class="control">
                   <button class="button is-link">Submit</button>

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -22,9 +21,10 @@ func HelloWeb(c *gin.Context) {
 
 	if c.Request.Method == "POST" {
 
-		value := c.DefaultPostForm("username", "none")
+		user := c.DefaultPostForm("username", "none" )
+		pass := c.DefaultPostForm("password", "none" )
 
-		log.Println(value)
+
 
 		c.HTML(http.StatusOK, "internal.html", nil)
 		return
@@ -37,4 +37,10 @@ func HelloWeb(c *gin.Context) {
 
 func HelloIndex(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", nil)
+}
+
+func CheckUser(user, pass string){
+
+	return 
+
 }
